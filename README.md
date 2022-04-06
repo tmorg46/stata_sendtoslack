@@ -1,7 +1,9 @@
 # stata_sendtoslack
-code written by others that I use and others might find useful
 
-from the original readme.do file, written by Jared:
+send yourself a direct message on Slack when a Stata do file starts, fails, and/or finishes
+code written by others as credited in each file
+
+from the original readme.do file, written by Jared and modified for this repository:
 
 /*
 Jared Wright
@@ -13,25 +15,19 @@ To receive notifications on your phone, you will need to have slack installed on
 Feel free to email with any questions
 */
 
-* For more information on creating a url, run the following commands:
+For more information on creating a url, run the following commands:
 ssc install sendtoslack
 help sendtoslack
 
-* This is an example of how to use sendtoslack in a do file
+This is an example of how to use sendtoslack in a do file
 capture program drop sendtoslack sts_Send sts_Saveurl
-run "V:\FHSS-JoePriceResearch\RA_work_folders\master\sendtoslack\sendtoslack.ado"
+run "the path to the .ado file"
 
 sleep 3000
-sendtoslack, url(jared) message("Someone ran the readme.do file in the sendtoslack folder")
+sendtoslack, url("your url") message("Someone ran the readme.do file in the sendtoslack folder")
 
-* After creating your custom url, you can add a custom name to the sendtoslack.ado file. You can add a custom name in at around line 50 in this ado file
-doedit "V:\FHSS-JoePriceResearch\RA_work_folders\master\sendtoslack\sendtoslack.ado"
+After creating your custom url, you can add a custom name to the sendtoslack.ado file. You can add a custom name in at around line 50 in the .ado file
 
-* After you've added a custom name, you have to redefine the sendtoslack program, or the sendtoslack command won't recognize your custom name. Redefine the program by running the following lines. To enable notifications within a do file, just add the following two lines at the top of the do file.
-capture program drop sendtoslack sts_Send sts_Saveurl
-run "V:\FHSS-JoePriceResearch\RA_work_folders\master\sendtoslack\sendtoslack.ado"
+Now you can send yourself notifications while a do file is running.
 
-* Now you can send yourself notifications while a do file is running.
-
-* To receive a notification when the do file finishes or breaks, use the following file. Just change the macro sendtoslack_url to your custom name and the macro file_to_run the the directory of the file for which you want to receive notifications. Then instead of running your do file, run the following file.
-doedit "V:\FHSS-JoePriceResearch\RA_work_folders\master\sendtoslack\run_code_file.do"
+To receive a notification when the do file finishes or breaks, use the sendtoslack file. Just change the macros. Then instead of running your do file, run that file.
