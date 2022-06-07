@@ -16,16 +16,17 @@ Feel free to email with any questions
 */
 
 For more information on creating a url, run the following commands:
-- ssc install sendtoslack
-- help sendtoslack
-
+```
+ssc install sendtoslack
+help sendtoslack
+```
 This is an example of how to use sendtoslack in a do file
-
-- capture program drop sendtoslack sts_Send sts_Saveurl
-- run "the path to the .ado file"
-- sleep 3000
-- sendtoslack, url("your url") message("Someone ran the readme.do file in the sendtoslack folder")
-
+```
+capture program drop sendtoslack sts_Send sts_Saveurl
+run "the path to the .ado file"
+sleep 3000
+sendtoslack, url("your url") message("Someone ran the readme.do file in the sendtoslack folder")
+```
 After creating your custom url, you can add a custom name to the sendtoslack.ado file. You can add a custom name in at around line 50 in the .ado file
 
 Now you can send yourself notifications while a do file is running.
