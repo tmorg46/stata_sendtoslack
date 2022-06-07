@@ -15,7 +15,7 @@ To receive notifications on your phone, you will need to have slack installed on
 Feel free to email with any questions
 */
 
-For more information on creating a url, run the following commands:
+For more information on setting up sendtoslack, run the following commands:
 ```
 ssc install sendtoslack
 help sendtoslack
