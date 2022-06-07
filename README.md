@@ -3,6 +3,8 @@
 send yourself a direct message on Slack when a Stata do file starts, fails, and/or finishes
 code written by others as credited in each file
 
+instructions are listed in each file and below.
+
 from the original readme.do file, written by Jared and modified for this repository:
 
 /*
